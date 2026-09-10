@@ -30,7 +30,8 @@
 
 <div class="game-page">
   <div class="game-frame-wrap">
-    <iframe src="https://icons-5.org/g4m3s/rooftop-snipers/game.html" allowfullscreen loading="lazy"></iframe>
+    <button class="fullscreen-btn" type="button" onclick="toggleGameFullscreen()" aria-label="Fullscreen" title="Fullscreen">⛶</button>
+    <iframe id="gameFrame" src="https://icons-5.org/g4m3s/rooftop-snipers/game.html" allowfullscreen loading="lazy"></iframe>
   </div>
   <div class="game-title-row">
     <img src="https://icons-5.org/g4m3s/rooftop-snipers/img/thumb.png" alt="Rooftop Snipers">
@@ -51,6 +52,16 @@
   <p><strong>Will Rooftop Snipers run on a locked-down machine?</strong><br>Being lightweight and browser-based, Rooftop Snipers typically runs fine on school or work machines, though local network rules can still apply.</p>
 </div>
 </div>
+<script>
+function toggleGameFullscreen() {
+  var el = document.getElementById('gameFrame');
+  if (!document.fullscreenElement) {
+    (el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen).call(el);
+  } else {
+    (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);
+  }
+}
+</script>
 <footer class="site-footer">
   &copy; <span id="year"></span> quiz-88 &middot; Free browser games, no downloads
   <div class="footer-links">
